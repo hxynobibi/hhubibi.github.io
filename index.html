@@ -64,9 +64,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-test-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Nov_23" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/11/23/test-1/" class="article-date">
+    <a href="/2020/11/23/Nov_23/" class="article-date">
   <time datetime="2020-11-23T13:39:08.000Z" itemprop="datePublished">2020-11-23</time>
 </a>
     
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/23/test-1/">git报错 fatal:open /dev/null or dup failed: No such file or directory</a>
+      <a class="article-title" href="/2020/11/23/Nov_23/">git报错 fatal:open /dev/null or dup failed: No such file or directory</a>
     </h1>
   
 
@@ -86,11 +86,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="git报错-fatal-open-dev-null-or-dup-failed-No-such-file-or-directory"><a href="#git报错-fatal-open-dev-null-or-dup-failed-No-such-file-or-directory" class="headerlink" title="git报错 fatal:open /dev/null or dup failed: No such file or directory"></a>git报错 fatal:open /dev/null or dup failed: No such file or directory</h1>
+        <p>大概是一两周前装的git for windows，然后搞了个博客。装的时候已经把C:\Windows\System32\drivers里面的null.sys替换掉了。</p>
+<p>今天想要用git的时候发现git bash here打不开，cmd上<code>git --version</code>也出错了，报的错是fatal:open /dev/null or dup failed: No such file or directory</p>
+<p>尝试了很多种方法</p>
+<ul>
+<li>卸载git，重新装，没用，而且git卸载不干净</li>
+<li>修改注册表里面\HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Null第一个数据值为1，然后重启，没用</li>
+<li>管理员身份打开cmd，输入命令<code>sfc /scannow</code>，检查修复系统出现问题到100%，重启，终于成功了</li>
+</ul>
+<p>是真的坑</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hhubibi.github.io/2020/11/23/test-1/" data-id="ckhulq0ps0000twwuh5ud6il6" class="article-share-link">Share</a>
+      <a data-url="https://hhubibi.github.io/2020/11/23/Nov_23/" data-id="ckhum2add0000n4wug0yvd845" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +140,7 @@
       <ul>
         
           <li>
-            <a href="/2020/11/23/test-1/">git报错 fatal:open /dev/null or dup failed: No such file or directory</a>
+            <a href="/2020/11/23/Nov_23/">git报错 fatal:open /dev/null or dup failed: No such file or directory</a>
           </li>
         
       </ul>
