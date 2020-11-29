@@ -7,15 +7,15 @@
   
   <title>Git初探 | hhubibi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本地仓库  整体步骤： 123git init                  &#x2F;&#x2F;生成一个隐藏的.git文件git add [file]            &#x2F;&#x2F;将文件增加到git需要跟踪的文件列表中git commit -m &quot;message&quot;   &#x2F;&#x2F;将文件放到仓库中   另外常用的一些命令：  git st">
+  <meta name="description" content="本地仓库整体步骤： 123git init                  &#x2F;&#x2F;生成一个隐藏的.git文件git add [file]            &#x2F;&#x2F;将文件增加到git需要跟踪的文件列表中git commit -m &quot;message&quot;   &#x2F;&#x2F;将文件放到仓库中  另外常用的一些命令：  git statu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git初探">
 <meta property="og:url" content="https://hhubibi.github.io/2020/11/29/Nov-29/index.html">
 <meta property="og:site_name" content="hhubibi&#39;s blog">
-<meta property="og:description" content="本地仓库  整体步骤： 123git init                  &#x2F;&#x2F;生成一个隐藏的.git文件git add [file]            &#x2F;&#x2F;将文件增加到git需要跟踪的文件列表中git commit -m &quot;message&quot;   &#x2F;&#x2F;将文件放到仓库中   另外常用的一些命令：  git st">
+<meta property="og:description" content="本地仓库整体步骤： 123git init                  &#x2F;&#x2F;生成一个隐藏的.git文件git add [file]            &#x2F;&#x2F;将文件增加到git需要跟踪的文件列表中git commit -m &quot;message&quot;   &#x2F;&#x2F;将文件放到仓库中  另外常用的一些命令：  git statu">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-29T01:04:31.000Z">
-<meta property="article:modified_time" content="2020-11-29T01:33:45.519Z">
+<meta property="article:modified_time" content="2020-11-29T01:39:31.630Z">
 <meta property="article:author" content="hhubibi">
 <meta name="twitter:card" content="summary">
   
@@ -88,11 +88,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2></br>
-
-<p><strong>整体步骤：</strong></p>
+        <h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><p><strong>整体步骤：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init                  &#x2F;&#x2F;生成一个隐藏的.git文件</span><br><span class="line">git add [file]            &#x2F;&#x2F;将文件增加到git需要跟踪的文件列表中</span><br><span class="line">git commit -m &quot;message&quot;   &#x2F;&#x2F;将文件放到仓库中</span><br></pre></td></tr></table></figure>
-</br>
 
 <p>另外常用的一些命令：</p>
 <ul>
@@ -101,13 +98,8 @@
 <li><code>git show ID</code> 查看提交的一些内容，提交者等信息</li>
 <li><code>git checkout ID [file]</code> 将文件内容反转为之前提交的东西，需要再次commit</li>
 </ul>
-<p></br></br></p>
-<h2 id="远程仓库（以github为例）"><a href="#远程仓库（以github为例）" class="headerlink" title="远程仓库（以github为例）"></a>远程仓库（以github为例）</h2></br>
-
-<p><strong>整体步骤：</strong></br><br>此例为将别人的仓库下载到本地修改后再提交到自己的github仓库</p>
+<h2 id="远程仓库（以github为例）"><a href="#远程仓库（以github为例）" class="headerlink" title="远程仓库（以github为例）"></a>远程仓库（以github为例）</h2><p><strong>整体步骤：</strong><br>此例为将别人的仓库下载到本地修改后再提交到自己的github仓库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git clone [URL]                   &#x2F;&#x2F;clone github上面已经建好的仓库</span><br><span class="line">cd dir                            &#x2F;&#x2F;进入那个文件夹，就是github仓名同名文件夹</span><br><span class="line">git remote add remoteRepoName [URL]   &#x2F;&#x2F;添加远程仓库</span><br><span class="line">git remote -v                     &#x2F;&#x2F;查看origin和remoteRepoName</span><br><span class="line">git pull remoteRepoName master    &#x2F;&#x2F;抓取远程仓库中的所有文件到本地</span><br><span class="line">git pull --rebase --allow-unrelated-histories remoteRepoName master &#x2F;&#x2F;也可能是这个</span><br><span class="line">git add lab1&#x2F;*                    &#x2F;&#x2F;把东西加进去</span><br><span class="line">git commit -m &quot;message&quot;           &#x2F;&#x2F;提交</span><br><span class="line">git push origin master            &#x2F;&#x2F;上传</span><br></pre></td></tr></table></figure>
-
-</br>
 
 <p>注意事项：</p>
 <ul>
