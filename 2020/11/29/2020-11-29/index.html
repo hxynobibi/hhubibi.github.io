@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hhubibi.github.io">
-  <title>Git初探 | hhubibi&#39;s blog</title>
+  <title>Git学习笔记 | hhubibi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本地仓库整体步骤： 123git init                  &#x2F;&#x2F;生成一个隐藏的.git文件git add [file]            &#x2F;&#x2F;将文件增加到git需要跟踪的文件列表中git commit -m &quot;message&quot;   &#x2F;&#x2F;将文件放到仓库中  另外常用的一些命令：  git statu">
+  <meta name="description" content="记录自己学习git中的知识点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git初探">
+<meta property="og:title" content="Git学习笔记">
 <meta property="og:url" content="https://hhubibi.github.io/2020/11/29/2020-11-29/index.html">
 <meta property="og:site_name" content="hhubibi&#39;s blog">
-<meta property="og:description" content="本地仓库整体步骤： 123git init                  &#x2F;&#x2F;生成一个隐藏的.git文件git add [file]            &#x2F;&#x2F;将文件增加到git需要跟踪的文件列表中git commit -m &quot;message&quot;   &#x2F;&#x2F;将文件放到仓库中  另外常用的一些命令：  git statu">
+<meta property="og:description" content="记录自己学习git中的知识点">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-29T01:04:31.000Z">
-<meta property="article:modified_time" content="2021-07-29T09:25:18.176Z">
+<meta property="article:modified_time" content="2021-07-29T14:42:19.284Z">
 <meta property="article:author" content="hhubibi">
 <meta name="twitter:card" content="summary">
   
@@ -59,20 +59,10 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
-    			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
@@ -113,8 +103,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -133,9 +121,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -157,7 +143,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Git初探
+      Git学习笔记
     </h1>
   
 
@@ -170,7 +156,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><p><strong>整体步骤：</strong></p>
+        <p>记录自己学习git中的知识点</p>
+<a id="more"></a>
+
+<h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><p><strong>整体步骤：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init                  &#x2F;&#x2F;生成一个隐藏的.git文件</span><br><span class="line">git add [file]            &#x2F;&#x2F;将文件增加到git需要跟踪的文件列表中</span><br><span class="line">git commit -m &quot;message&quot;   &#x2F;&#x2F;将文件放到仓库中</span><br></pre></td></tr></table></figure>
 
 <p>另外常用的一些命令：</p>
@@ -180,7 +169,34 @@
 <li><code>git show ID</code> 查看提交的一些内容，提交者等信息</li>
 <li><code>git checkout ID [file]</code> 将文件内容反转为之前提交的东西，需要再次commit</li>
 </ul>
-<a id="more"></a>
+<p>设置用户名，邮箱</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;hhubibi&quot;</span><br><span class="line">git config --global user.email &quot;hdasd@zju.end.cn&quot;</span><br></pre></td></tr></table></figure>
+
+<p>比较差异</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></table></figure>
+
+<p>停止追踪一个文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached test.txt</span><br></pre></td></tr></table></figure>
+
+<p>新建分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch test</span><br></pre></td></tr></table></figure>
+
+<p>查看分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>删除分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d test</span><br></pre></td></tr></table></figure>
+
+<p>切换分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout test</span><br></pre></td></tr></table></figure>
+
+<p>合并分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge test</span><br></pre></td></tr></table></figure>
+
+<p>上传到github</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/hhubibi/test.git</span><br><span class="line">git push --set-upstream origin master</span><br></pre></td></tr></table></figure>
+
+
 
 <h2 id="远程仓库（以github为例）"><a href="#远程仓库（以github为例）" class="headerlink" title="远程仓库（以github为例）"></a>远程仓库（以github为例）</h2><p><strong>整体步骤：</strong><br>此例为将别人的仓库下载到本地修改后再提交到自己的github仓库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git clone [URL]                   &#x2F;&#x2F;clone github上面已经建好的仓库</span><br><span class="line">cd dir                            &#x2F;&#x2F;进入那个文件夹，就是github仓名同名文件夹</span><br><span class="line">git remote add remoteRepoName [URL]   &#x2F;&#x2F;添加远程仓库</span><br><span class="line">git remote -v                     &#x2F;&#x2F;查看origin和remoteRepoName</span><br><span class="line">git pull remoteRepoName master    &#x2F;&#x2F;抓取远程仓库中的所有文件到本地</span><br><span class="line">git pull --rebase --allow-unrelated-histories remoteRepoName master &#x2F;&#x2F;也可能是这个</span><br><span class="line">git add lab1&#x2F;*                    &#x2F;&#x2F;把东西加进去</span><br><span class="line">git commit -m &quot;message&quot;           &#x2F;&#x2F;提交</span><br><span class="line">git push origin master            &#x2F;&#x2F;上传</span><br></pre></td></tr></table></figure>
@@ -358,7 +374,7 @@
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
-		innerArchive: true,
+		innerArchive: false,
 		showTags: false
 	}
 </script>
@@ -378,129 +394,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
     
-    	<section class="tools-section tools-section-all" q-show="innerArchive">
-        <div class="search-wrap">
-          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
-          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
-          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
-        </div>
-        <div class="widget tagcloud search-tag">
-          <p class="search-tag-wording">tag:</p>
-          <label class="search-switch">
-            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
-          </label>
-          <ul class="article-tag-list" q-show="showTags">
-            
-            <div class="clearfix"></div>
-          </ul>
-        </div>
-        <ul class="search-ul">
-          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
-            3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
-  jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
-</pre>
-          </p>
-          <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
-            <p class="search-time">
-              <i class="icon-calendar icon"></i>
-              <span q-text="date|dateformat"></span>
-            </p>
-            <p class="search-tag">
-              <i class="icon-price-tags icon"></i>
-              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
-            </p>
-          </li>
-        </ul>
-    	</section>
-    
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">生命不止，跑路不息</div>
   	  	
     	</section>
     
